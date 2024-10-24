@@ -13,6 +13,7 @@ new \Kirki\Panel(
 // Section 01
 
 function techub_header_info_section(){
+
      new \Kirki\Section(
           'techub_header_section',
           [
@@ -20,6 +21,20 @@ function techub_header_info_section(){
                'description' => esc_html__( 'My Section Description.', 'kirki' ),
                'panel'       => 'techub_panle',
                'priority'    => 160,
+          ]
+     );
+
+     new \Kirki\Field\Checkbox_Switch(
+          [
+               'settings'    => 'header_top_switch',
+               'label'       => esc_html__( 'Header Topbar Switch', 'kirki' ),
+               'description' => esc_html__( 'Header topbar switch information', 'kirki' ),
+               'section'     => 'techub_header_section',
+               'default'     => 'off',
+               'choices'     => [
+                    'on'  => esc_html__( 'Enable', 'kirki' ),
+                    'off' => esc_html__( 'Disable', 'kirki' ),
+               ],
           ]
      );
      
@@ -106,3 +121,28 @@ function techub_header_social_section(){
      );
 }
 techub_header_social_section();
+
+
+function techub_header_logo_section(){
+     new \Kirki\Section(
+          'techub_header_logo_section',
+          [
+               'title'       => esc_html__( 'Header Logo', 'kirki' ),
+               'description' => esc_html__( 'Techub Header Logo Info', 'kirki' ),
+               'panel'       => 'techub_panle',
+               'priority'    => 160,
+          ]
+     );
+
+     new \Kirki\Field\Image(
+          [
+               'settings'    => 'header_logo',
+               'label'       => esc_html__( 'Techub Logo', 'kirki' ),
+               'description' => esc_html__( 'Please set your header logo', 'kirki' ),
+               'section'     => 'techub_header_logo_section',
+               'default'     => get_template_directory_uri().'/assets/img/logo/logo.png',
+          ]
+     );
+}
+
+techub_header_logo_section();

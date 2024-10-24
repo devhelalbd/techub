@@ -48,9 +48,9 @@ add_action( 'after_setup_theme', 'techub_theme_support' );
 
 
 include_once('inc/common/scripts.php');
-include_once('inc/common/template-function.php');
+include_once('inc/template-function.php');
 if (class_exists('Kirki')){
-     
+
      include_once('inc/techub-kirki.php');
 }
 
