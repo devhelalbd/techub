@@ -1,8 +1,8 @@
 <?php
 
-     $address_text = get_theme_mod('address_text', 'Manchester 21, Zurich, CH');
-     $address_url = get_theme_mod('address_url', '#');
-     $email_address = get_theme_mod('email_address', 'info@companyname.com');
+     $address_text = get_theme_mod('address_text', __('Manchester 21, Zurich, CH','techub'));
+     $address_url = get_theme_mod('address_url',  __('#','techub'));
+     $email_address = get_theme_mod('email_address', __('info@companyname.com','techub'));
      $header_top_switch = get_theme_mod('header_top_switch', false);
 
 ?>
@@ -22,11 +22,11 @@
                     <div class="col-xl-6">
                         <div class="tp-header-top-address tp-header-5-top-address">
                          <?php if(!empty($address_text)) : ?>
-                            <span><i class="fa-thin fa-location-dot"></i><a href="<?php echo $address_url; ?>"><?php echo $address_text; ?></a></span>
+                            <span><i class="fa-thin fa-location-dot"></i><a href="<?php echo esc_url($address_url); ?>"><?php echo esc_html($address_text); ?></a></span>
                               <?php endif; ?>
 
                               <?php if(!empty($email_address)) : ?>
-                            <span><i class="fa-light fa-envelope"></i> <a href="mailto:<?php echo $email_address; ?>"><?php echo $email_address; ?></a></span>
+                            <span><i class="fa-light fa-envelope"></i> <a href="mailto:<?php echo esc_attr($email_address); ?>"><?php echo esc_html($email_address); ?></a></span>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -60,33 +60,7 @@
                         <div class="col-xl-6 d-none d-xl-block">
                             <div class="main-menu main-menu-5">
                                 <nav class="tp-main-menu-content">
-                                    <ul>
-                                        <li class="has-dropdown"><a class="color-active" href="index.html">Home</a></li>
-                                        <li class="has-dropdown"><a href="#">Pages</a>
-                                            <ul class="submenu tp-submenu">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="team.html">Our Team</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="portfolio.html">Our Portfolio</a></li>
-                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                <li><a href="error.html">Error</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="portfolio.html">Portfolio</a></li>
-                                        <li class="has-dropdown"><a href="service.html">Services</a>
-                                            <ul class="submenu tp-submenu">
-                                                <li><a href="service.html">Our Service</a></li>
-                                                <li><a href="service-details.html">Service Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown"><a href="blog.html">Blog</a>
-                                            <ul class="submenu tp-submenu">
-                                                <li><a href="blog-sideber.html">Blog Sidebar</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
+                                    <?php techub_menu(); ?>
                                 </nav>
                             </div>
                         </div>

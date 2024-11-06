@@ -6,7 +6,7 @@
         <button class="close-search"><i class="fa-light fa-arrow-up"></i></button>
         <form method="post" action="#">
             <div class="form-group">
-                <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+                <input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr('Search Here', 'techub'); ?>" required="">
                 <button type="submit"><i class="fal fa-search"></i></button>
             </div>
         </form>
